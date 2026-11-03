@@ -1,7 +1,6 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-
+from django.http import JsonResponse
+from ..fruits_db import fruits
 
 # Create your views here.
 def send_fruits(request):
-    return HttpResponse("Yay, works!")
+    return JsonResponse(fruits, safe=False)

@@ -34,3 +34,4 @@ htmlcov/
 # --- System Files ---
 .DS_Store
 Thumbs.db
+fruits_db.py
