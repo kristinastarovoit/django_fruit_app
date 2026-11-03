@@ -1,6 +1,6 @@
 async function init() {
     await fetchFruits();
-    // renderFruits();
+    renderFruits();
 }
 
 let fruits = [];
@@ -19,4 +19,19 @@ async function fetchFruits() {
     } catch (error) {
         console.error(error.message);
     }
+}
+
+function renderFruits() {
+    list = document.getElementById('fruit-list');
+    list.innerHTML = '';
+    for (let i = 0; i < fruits.length; i++) {
+        list.innerHTML += getFruitTemplate(i);
+    }
+}
+
+function getFruitTemplate(i) {
+    return `<li style="font-size:1.2rem"><b>${fruits[i].name}</b></li>
+            <li>${fruits[i].weight} kg</li>
+            <li>${fruits[i].color}</li>
+            <br>`
 }
